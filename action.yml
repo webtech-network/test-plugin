@@ -6,7 +6,7 @@ inputs:
     description: "input 1"
     required: true
     default: "30"
-  input 2:
+  input-2:
     description: "input 2"
     required: true
     default: "40"
@@ -18,6 +18,10 @@ inputs:
     description: "input 4"
     required: false
     default: "10"
+  input-5:
+    description: "input 5"
+    required: false
+    default: "1"
 
 outputs:
   result:
@@ -27,8 +31,8 @@ runs:
   using: docker
   image: "Dockerfile"  # The Docker image containing the autograder
   args:
-    - "--html-weight=${{ inputs.html-weight }}"
-    - "--css-weight=${{ inputs.css-weight }}"
-    - "--js-weight=${{ inputs.js-weight }}"
-    - "--grading-criteria=${{ inputs.grading-criteria }}"
-    - "--timeout=${{ inputs.timeout }}"
+    - "--html-weight=${{ inputs.input-1 }}"
+    - "--css-weight=${{ inputs.input-2 }}"
+    - "--js-weight=${{ inputs.input-3 }}"
+    - "--grading-criteria=${{ inputs.input-4 }}"
+    - "--timeout=${{ inputs.input-5 }}"
