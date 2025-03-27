@@ -2,26 +2,22 @@ name: "Github Actions Plugin Tester"
 author: "Webtech Network"
 description: "A super cool sandbox environment for testing how github actions works with custom plugins."
 inputs:
-  input-1:
-    description: "input 1"
+  html-weight:
+    description: "Weight for the HTML grading section."
     required: true
     default: "30"
-  input-2:
-    description: "input 2"
+  css-weight:
+    description: "Weight for the CSS grading section."
     required: true
     default: "40"
-  input-3:
-    description: "input 3"
+  js-weight:
+    description: "Weight for the JavaScript grading section."
     required: true
     default: "30"
-  input-4:
-    description: "input 4"
+  timeout:
+    description: "Duration (in minutes) before the grading process is terminated. Defaults to 10 minutes."
     required: false
     default: "10"
-  input-5:
-    description: "input 5"
-    required: false
-    default: "1"
 
 outputs:
   result:
@@ -31,8 +27,7 @@ runs:
   using: docker
   image: "Dockerfile"  # The Docker image containing the autograder
   args:
-    - "--html-weight=${{ inputs.input-1 }}"
-    - "--css-weight=${{ inputs.input-2 }}"
-    - "--js-weight=${{ inputs.input-3 }}"
-    - "--grading-criteria=${{ inputs.input-4 }}"
-    - "--timeout=${{ inputs.input-5 }}"
+    - ${{ inputs.html-weight }}
+    - ${{ inputs.css-weight }} 
+    - ${{ inputs.js-weight }}
+    - ${{ inputs.timeout }}
