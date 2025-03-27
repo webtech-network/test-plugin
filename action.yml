@@ -1,0 +1,34 @@
+name: "Github Actions Plugin Tester"
+author: "Webtech Network"
+description: "A super cool sandbox environment for testing how github actions works with custom plugins."
+inputs:
+  input-1:
+    description: "input 1"
+    required: true
+    default: "30"
+  input 2:
+    description: "input 2"
+    required: true
+    default: "40"
+  input-3:
+    description: "input 3"
+    required: true
+    default: "30"
+  input-4:
+    description: "input 4"
+    required: false
+    default: "10"
+
+outputs:
+  result:
+    description: "Base64-encoded JSON containing the results of the grading."
+
+runs:
+  using: docker
+  image: "Dockerfile"  # The Docker image containing the autograder
+  args:
+    - "--html-weight=${{ inputs.html-weight }}"
+    - "--css-weight=${{ inputs.css-weight }}"
+    - "--js-weight=${{ inputs.js-weight }}"
+    - "--grading-criteria=${{ inputs.grading-criteria }}"
+    - "--timeout=${{ inputs.timeout }}"
