@@ -5,6 +5,7 @@ def read_and_print_file():
     print("Starting Process")
     base_path = os.path.dirname(__file__)
     file_path = os.path.join(base_path, 'utils', 'data.txt')
+    print(file_path+"\n")
     try:
         with open(file_path, 'r') as file:
             content = file.read()
