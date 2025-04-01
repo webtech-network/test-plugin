@@ -1,9 +1,11 @@
 # main.py
-
+import os
 def read_and_print_file():
     print("Starting Process")
+    base_path = os.path.dirname(__file__)
+    file_path = os.path.join(base_path, 'utils', 'data.txt')
     try:
-        with open('utils/data.txt', 'r') as file:
+        with open(file_path, 'r') as file:
             content = file.read()
             print(content)
     except FileNotFoundError:
@@ -13,3 +15,6 @@ def read_and_print_file():
 
 if __name__ == "__main__":
     read_and_print_file()
+
+
+
