@@ -1,6 +1,7 @@
 # main.py
 
 def read_and_print_file():
+    print("Starting Process")
     try:
         with open('utils/data.txt', 'r') as file:
             content = file.read()
