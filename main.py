@@ -1,3 +1,4 @@
+
 # main.py
 import os
 def read_and_print_file():
@@ -14,7 +15,8 @@ def read_and_print_file():
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
+    print("Current working directory:", os.getcwd())
+    for file_name in os.listdir(os.getcwd()):
+        print(file_name)
+    print("_____________")
     read_and_print_file()
-
-
-
