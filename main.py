@@ -2,7 +2,7 @@
 
 def read_and_print_file():
     try:
-        with open('../../data.txt', 'r') as file:
+        with open('utils/data.txt', 'r') as file:
             content = file.read()
             print(content)
     except FileNotFoundError:
