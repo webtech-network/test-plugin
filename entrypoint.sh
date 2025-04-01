@@ -6,3 +6,5 @@ echo "Input3 = $3"
 echo "Input4 = $4"
 echo "Input5 = $5"
 
+ls -R 
+python /app/main.py
